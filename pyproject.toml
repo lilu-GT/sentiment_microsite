@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sentiment_micro_site"
+version = "0.1.0"
+description = ""
+authors = ["lilu-GT <lilu@dsaid.gov.sg>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.9.7 || >3.9.7,<4.0"
+pandas = "^1.4.1"
+boto3 = "^1.24.74"
+streamlit = "^1.12.2"
+openpyxl = "^3.0.10"
+XlsxWriter = "^3.0.3"
+streamlit-autorefresh = "^0.0.1"
+
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
