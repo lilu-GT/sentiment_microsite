@@ -40,17 +40,13 @@ def main():
 
     st.markdown("### How to interprete the results:")
     st.write('''
-    Sentiment analysis returns the result file in excel format with 2 spreadsheets/tabs:
-    \n- “rows with content” tab
-    \n\t This tab contains all the cells from the processed column that are not empty. The sentiment analysis results are presented in three additional columns:
+    Sentiment analysis returns the result file in excel format which is presented in three additional columns:
     \n    1. Case index:
-    \n\t\tIndex is generated for each row according to the order in the original file.
+    \n\tIndex is generated for each row according to the order in the original file.
     \n    2. Predicted sentiment:
-    \n\t\tSentiment labels are identified based on the textual description in each row. Each row will be assigned with one of the three possible values of sentiments, namely “Postive”, “Neutral” or “Negative”.
+    \n\tSentiment labels are identified based on the textual description in each row. Each row will be assigned with one of the three possible values of sentiments, namely “Postive”, “Neutral” or “Negative”.
     \n    3. Confidence score:
-    \n\t\tConfidence scores range from 1 to 0. Scores closer to 1 indicate higher confidence in the predicted sentiment value, while lower scores indicate lower confidence.
-    \n- “empty rows” tab
-    \n\t This tab contains all the empty cells from the processed column. This tab can be empty.
+    \n\tConfidence scores range from 1 to 0. Scores closer to 1 indicate higher confidence in the predicted sentiment value, while lower scores indicate lower confidence.
     ''')
 
     st.text("")
