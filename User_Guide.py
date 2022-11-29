@@ -10,24 +10,23 @@ np.random.seed(0)
 
 
 def main():
-    # st.set_page_config(layout="wide")
     st.title("GovText Tool for Sentiment Analysis")
 
     st.markdown("## User Guide")
     st.text("")
 
     st.markdown("### Introduction:")
-    st.write("This is a GovText microsite which provides a trial version of a sentiment analysis tool. Sentiment analysis provides a way of identifying sentiment in textual data. Using sentiment analysis tool, you can get sentiment labels (“Negative”, “Neutral” and “Postive”) and confidence scores for each case description text.")
+    st.write("This is a GovText microsite which provides a trial version of a sentiment analysis tool. Sentiment analysis helps you identify sentiment in textual data. Using sentiment analysis tool, you can get a sentiment label (“Postive”, “Neutral” or “Negative”) and a confidence score for each piece of text description.")
 
     st.text("")
 
     st.markdown("### How to use:")
     st.write('''
-    1. Prepare your data in a CSV or Excel spreadsheet. The case description text should be arranged in one column and the column should have a header. Each row shall contain one case description.
+    1. Prepare your data in a CSV or Excel spreadsheet. The text description should be arranged in one column and the column should have a header. Each row shall contain one piece of text description. For example, if you have a number of feedback cases, all the feedback case descriptions shall be arranged in the same column, and one case per row.
 
     \n2. Click on the tab **“Analysing Sentiment”** on the left menu of this page.
 
-    \n3. Indicate the header name of the case description text column. Please note that the header name is case sensitive. 
+    \n3. Indicate the header name of the column to be analysed. Please note that the header name is case sensitive. 
 
     \n4. Upload your dataset by browsing your file or drag and drop your file.
     
@@ -41,17 +40,17 @@ def main():
 
     st.markdown("### How to interprete the results:")
     st.write('''
-    Sentiment analysis returns the result file with 2 spreadsheets:
-    \n- cases with sentiments 
-    \n\t If the case description field is not empty, there will be three added columns showing:
+    Sentiment analysis returns the result file in excel format with 2 spreadsheets/tabs:
+    \n- “rows with content” tab
+    \n\t This tab contains all the cells from the processed column that are not empty. The sentiment analysis results are presented in three additional columns:
     \n    1. Case index:
-    \n\t\tIndex is generated for each case according to the order in the original file.
+    \n\t\tIndex is generated for each row according to the order in the original file.
     \n    2. Predicted sentiment:
-    \n\t\tSentiment labels are identified from the case description text is “Negative” or “Neutral” or “Postive”.
+    \n\t\tSentiment labels are identified based on the textual description in each row. Each row will be assigned with one of the three possible values of sentiments, namely “Postive”, “Neutral” or “Negative”.
     \n    3. Confidence score:
-    \n\t\tConfidence scores range from 1 to 0. Scores closer to 1 indicate a higher confidence in the label's classification, while lower scores indicate lower confidence.
-    \n- empty cases
-    \n\t If the case description field is empty, the case will be shift to this speadsheet with an added column showing the case index. This spreadsheet can be empty.
+    \n\t\tConfidence scores range from 1 to 0. Scores closer to 1 indicate higher confidence in the predicted sentiment value, while lower scores indicate lower confidence.
+    \n- “empty rows” tab
+    \n\t This tab contains all the empty cells from the processed column. This tab can be empty.
     ''')
 
     st.text("")

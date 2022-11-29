@@ -58,17 +58,20 @@ def get_analysis_interface():
                               df_sentiment[df_sentiment['Predicted sentiment'] == 'Neutral'].shape[0]),
                              ('Negative',
                               df_sentiment[df_sentiment['Predicted sentiment'] == 'Negative'].shape[0]),
+                             ('Empty', df_empty_responses.shape[0]),
                              ('', ''),
                              ('Total', df_sentiment.shape[0])], columns=['Sentiment', 'Number of cases'])
 
     # ----------------------- Compile the results -----------------------#
     # Excel File
+    df_result = pd.concat(
+        [df_sentiment, df_empty_responses], axis=0, ignore_index=True)
+    df_result = df_result.sort_values('Case index')
     excel_buffer = io.BytesIO()
     with pd.ExcelWriter(excel_buffer) as writer:
-        df_sentiment.to_excel(writer, index=False,
-                              sheet_name='cases with sentiments')
-        df_empty_responses.to_excel(
-            writer, index=False, sheet_name='empty cases')
+        df_result.to_excel(writer, index=False)
+        # df_empty_responses.to_excel(
+        #     writer, index=False, sheet_name='empty cases')
 
     # ----------------------- Upload to S3 -----------------------#
     results_filename = uploaded_file.name[:uploaded_file.name.rfind('.')] + '_results_' + \
