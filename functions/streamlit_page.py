@@ -69,7 +69,8 @@ def get_analysis_interface():
     df_result = df_result.sort_values('Case index')
     excel_buffer = io.BytesIO()
     with pd.ExcelWriter(excel_buffer) as writer:
-        df_result.to_excel(writer, index=False)
+        df_result.to_excel(writer, index=False,
+                           sheet_name='predicted sentiment')
         # df_empty_responses.to_excel(
         #     writer, index=False, sheet_name='empty cases')
 
