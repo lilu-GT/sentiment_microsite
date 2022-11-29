@@ -41,11 +41,11 @@ def main():
     st.markdown("### How to interprete the results:")
     st.write('''
     Sentiment analysis returns the result file in excel format which is presented in three additional columns:
-    \n    1. Case index:
+    \n1. Case index:
     \n\tIndex is generated for each row according to the order in the original file.
-    \n    2. Predicted sentiment:
+    \n2. Predicted sentiment:
     \n\tSentiment labels are identified based on the textual description in each row. Each row will be assigned with one of the three possible values of sentiments, namely “Postive”, “Neutral” or “Negative”.
-    \n    3. Confidence score:
+    \n3. Confidence score:
     \n\tConfidence scores range from 1 to 0. Scores closer to 1 indicate higher confidence in the predicted sentiment value, while lower scores indicate lower confidence.
     ''')
 
