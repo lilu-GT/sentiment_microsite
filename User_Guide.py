@@ -16,7 +16,7 @@ def main():
     st.text("")
 
     st.markdown("### Introduction:")
-    st.write("This is a GovText microsite which provides a trial version of a sentiment analysis tool. Sentiment analysis helps you identify sentiment in textual data. Using sentiment analysis tool, you can get a sentiment label (“Postive”, “Neutral” or “Negative”) and a confidence score for each piece of text description.")
+    st.write("This is a GovText microsite which provides a trial version of a sentiment analysis tool. Sentiment analysis helps you identify sentiment in textual data. Using sentiment analysis tool, you can get a sentiment label (“Positive”, “Neutral” or “Negative”) and a confidence score for each piece of text description.")
 
     st.text("")
 
@@ -38,13 +38,13 @@ def main():
 
     st.text("")
 
-    st.markdown("### How to interprete the results:")
+    st.markdown("### How to interpret the results:")
     st.write('''
     Sentiment analysis returns the result file in excel format which is presented in three additional columns:
     \n1. Case index:
     \n\tIndex is generated for each row according to the order in the original file.
     \n2. Predicted sentiment:
-    \n\tSentiment labels are identified based on the textual description in each row. Each row will be assigned with one of the three possible values of sentiments, namely “Postive”, “Neutral” or “Negative”.
+    \n\tSentiment labels are identified based on the textual description in each row. Each row will be assigned with one of the three possible values of sentiments, namely “Positive”, “Neutral” or “Negative”.
     \n3. Confidence score:
     \n\tConfidence scores range from 1 to 0. Scores closer to 1 indicate higher confidence in the predicted sentiment value, while lower scores indicate lower confidence.
     ''')
